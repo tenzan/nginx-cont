@@ -10,16 +10,16 @@
 `docker build -t nginx-cont .`
 
 4. Start container
+`docker run --name nginx-cont -d -p 8080:80 nginx`
 
-`docker run --name nginx-cont -d app-dir`
+5. Check your docker-machine's IP address by
+`docker-machine ip default` this was `192.168.99.100` in my case
 
-or exposing the port
+6. `http://192.168.99.100:8080/` will show Nginx's default page
 
-`docker run --name nginx-cont -d -p 8080:80 app-dir`
+_Note_: `nginx.conf` is not used here for now.
 
-The page should be available but it's not working.
-
-The issue posted https://github.com/nginxinc/docker-nginx/issues/54
+*Still WIP*
 
 *Official build of Nginx*
 _Note: based on Debian_
